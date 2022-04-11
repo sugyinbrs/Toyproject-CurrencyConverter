@@ -1,0 +1,21 @@
+:root {
+  /* Color */
+  --color-black: var(--color-black-17);
+  --color-white: var(--color-white-17);
+  --color-orange-16: #dd6e42;
+  --color-light-yellow-16: #e8dab2;
+  --color-light-navy-16: #4f6d7a;
+  --color-light-skyblue-16: #c0d6df;
+  --color-light-beige-16: #eaeaea;
+  --color-black-17: #353535;
+  --color-dark-green-17: #3c6e71;
+  --color-white-17: #ffffff;
+  --color-light-grey-17: #d9d9d9;
+  --color-dark-navy-17: #284b63;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
