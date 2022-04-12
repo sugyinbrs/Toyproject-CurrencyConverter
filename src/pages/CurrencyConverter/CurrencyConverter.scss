@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.currencyConverter {
+  @include flexCenter;
+  height: 100vh;
+  background-color: var(--color-dark-navy-17);
+
+  .currencyConverterContainer {
+    @include flexCenter;
+    width: 40vw;
+    height: 80vh;
+    margin: 0 auto;
+    border-radius: 4%;
+    background-color: var(--color-light-grey-17);
+  }
+}
