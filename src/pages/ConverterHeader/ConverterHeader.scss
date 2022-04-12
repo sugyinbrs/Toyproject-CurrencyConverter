@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+
+.converterHeader {
+  @include flexCenter;
+  flex-direction: column;
+
+  .converterHeaderIcon {
+    width: 20%;
+    margin-bottom: 20px;
+  }
+
+  .converterHeaderTitle {
+    margin-bottom: 20px;
+    color: var(--color-orange-16);
+    font-size: 2.8vw;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .converterHeaderSubtitle {
+    width: 70%;
+    color: #7e7e7e;
+    font-size: 1.1vw;
+    text-align: center;
+  }
+}
