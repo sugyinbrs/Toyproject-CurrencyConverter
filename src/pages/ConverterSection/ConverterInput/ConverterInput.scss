@@ -1,0 +1,26 @@
+.converterInput {
+  display: flex;
+  justify-content: center;
+
+  &:nth-child(2) {
+    margin-top: 8vh;
+  }
+
+  select {
+    border-radius: 30px 0 0 30px;
+    font-size: 2.5vh;
+  }
+
+  input {
+    width: 50%;
+    border-radius: 0 30px 30px 0;
+    font-size: 2.5vh;
+    text-align: right;
+  }
+
+  select,
+  input {
+    padding: 16px;
+    border: none;
+  }
+}
