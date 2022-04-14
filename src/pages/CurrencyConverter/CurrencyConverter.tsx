@@ -1,6 +1,6 @@
 import React from 'react';
 import ConverterHeader from '../ConverterHeader/ConverterHeader';
-import ConverterInput from '../ConverterInput/ConverterInput';
+import ConverterSection from '../ConverterSection/ConverterSection';
 import './CurrencyConverter.scss';
 
 const CurrencyConverter = () => {
@@ -8,7 +8,7 @@ const CurrencyConverter = () => {
     <main className='currencyConverter'>
       <div className='currencyConverterContainer'>
         <ConverterHeader />
-        <ConverterInput />
+        <ConverterSection />
       </div>
     </main>
   );
