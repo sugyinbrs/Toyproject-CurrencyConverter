@@ -1,7 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import '../src/styles/reset.scss';
 import '../src/styles/common.scss';
 import Router from './Router';
 
-ReactDOM.render(<Router />, document.getElementById('root'));
+const container = document.getElementById('root');
+
+// create a root
+const root = createRoot(container!);
+
+// render app to root
+root.render(<Router />);
