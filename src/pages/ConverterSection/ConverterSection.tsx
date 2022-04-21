@@ -4,28 +4,35 @@ import ConverterInput from './ConverterInput/ConveterInput';
 import './ConverterSection.scss';
 
 function ConverterSection() {
-  const [isCurrencyCode, setIsCurrencyCode] = useState([]);
+  const [isCurrencyRate, setIsCurrencyRate] = useState([]);
+  const [fromCurrency, setFromCurrency] = useState('');
+  const [toCurrency, setToCurrency] = useState('');
 
-  const currencyCodeHandler = async () => {
+  const currencyDataHandler = async () => {
     const { data } = await axios(
       'https://v6.exchangerate-api.com/v6/d39eb2f40a872eff29a952df/latest/USD'
     );
-    setIsCurrencyCode(data.conversion_rates);
+    const firstCurrency = Object.keys(data.conversion_rates)[77];
+    setIsCurrencyRate(data.conversion_rates);
+    setFromCurrency(data.base_code);
+    setToCurrency(firstCurrency);
   };
 
   useEffect(() => {
-    currencyCodeHandler();
+    currencyDataHandler();
   }, []);
 
   return (
     <div className='converterSection'>
       <ConverterInput
-        codes={Object.keys(isCurrencyCode)}
-        currencies={isCurrencyCode}
+        codes={Object.keys(isCurrencyRate)}
+        selectedCurrencyCode={fromCurrency}
+        onChangeCurrencyCode={(e: any) => setFromCurrency(e.target.value)}
       />
       <ConverterInput
-        codes={Object.keys(isCurrencyCode)}
-        currencies={isCurrencyCode}
+        codes={Object.keys(isCurrencyRate)}
+        selectedCurrencyCode={toCurrency}
+        onChangeCurrencyCode={(e: any) => setToCurrency(e.target.value)}
       />
     </div>
   );
