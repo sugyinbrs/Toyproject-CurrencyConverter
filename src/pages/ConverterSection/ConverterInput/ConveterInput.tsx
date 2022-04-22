@@ -1,7 +1,13 @@
 import './ConverterInput.scss';
 
 function ConverterInput(props: any) {
-  const { codes, selectedCurrencyCode, onChangeCurrencyCode } = props;
+  const {
+    amount,
+    codes,
+    selectedCurrencyCode,
+    onChangeCurrencyCode,
+    onChangeCurrencyInput,
+  } = props;
 
   return (
     <section className='converterInput'>
@@ -14,7 +20,12 @@ function ConverterInput(props: any) {
           <option key={code}>{code}</option>
         ))}
       </select>
-      <input type='number' name='amount' />
+      <input
+        type='number'
+        name='amount'
+        value={amount}
+        onChange={onChangeCurrencyInput}
+      />
     </section>
   );
 }
