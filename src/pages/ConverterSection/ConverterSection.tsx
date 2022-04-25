@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import ConverterInput from './ConverterInput/ConveterInput';
+import ConverterInput from '../ConverterSection/ConverterInput/ConveterInput';
 import './ConverterSection.scss';
+
+const BASE_URL = 'https://v6.exchangerate-api.com/v6/d39eb2f40a872eff29a952df';
 
 function ConverterSection() {
   const [isCurrencyRate, setIsCurrencyRate] = useState([]);
@@ -21,9 +23,7 @@ function ConverterSection() {
   }
 
   const currencyDataHandler = async () => {
-    const { data } = await axios(
-      'https://v6.exchangerate-api.com/v6/d39eb2f40a872eff29a952df/latest/USD'
-    );
+    const { data } = await axios(`${BASE_URL}/latest/USD`);
     const firstCurrency = Object.keys(data.conversion_rates)[77];
     setIsCurrencyRate(data.conversion_rates);
     setFromCurrency(data.base_code);
@@ -34,6 +34,20 @@ function ConverterSection() {
   useEffect(() => {
     currencyDataHandler();
   }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await axios.get(
+          '/api/' + `pair/${fromCurrency}/${toCurrency}`
+        );
+        setExchangeRate(data.conversion_rate);
+      } catch (error) {
+        console.log('this is an error', error);
+      }
+    };
+    getData();
+  }, [fromCurrency, toCurrency]);
 
   const handleFromAmountChange = (e: any) => {
     setAmount(e.target.value);
