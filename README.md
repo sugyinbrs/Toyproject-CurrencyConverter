@@ -4,13 +4,14 @@
 * Frontend
 > - React
 > - Typescript
+> - Javascript
 > - SASS
 
 </br>
 
 ## 2. 구현 기능
 ### (1) 기본 환율 설정
-* 기준 환율 USD와 환산하고 싶은 환율 KRW 이 기본값으로 설정 되어있다.
+* 기준 환율 USD 와 환산하고 싶은 환율 KRW 이 기본값으로 설정 되어있다.
 <img width="1440" alt="Screen Shot 2022-05-09 at 19 41 38" src="https://user-images.githubusercontent.com/82952800/167394210-9dc12fdb-e643-423b-96ee-91ce4aa18760.png">
 
 </br>
