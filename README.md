@@ -9,6 +9,12 @@
 
 </br>
 
+* ExchangeRate-API (https://www.exchangerate-api.com/#)  
+> - 세계 환율 API 에서 환율 데이터를 GET 하여 활용하였습니다.
+
+
+</br>
+
 ## 2. 구현 기능
 ### (1) 기본 환율 설정
 * 기준 환율 USD 와 환산하고 싶은 환율 KRW 이 기본값으로 설정 되어있다.
